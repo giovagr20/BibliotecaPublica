@@ -6,7 +6,6 @@
      */
     public class BookDTO
     {
-        public int id { get; set; }
         public string titulo { get; set; }
         public DateTime anio { get; set; }
         public string genero { get; set; }

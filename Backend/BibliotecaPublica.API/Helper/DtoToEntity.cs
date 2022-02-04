@@ -5,6 +5,24 @@ namespace BibliotecaPublica.API.Helper
 {
     public class DtoToEntity : IDtoToEntity
     {
+        public AuthorEntity authorDtoToEntity(AuthorDTO authorDTO)
+        {
+            if (authorDTO == null)
+            {
+                throw new ArgumentNullException(nameof(authorDTO));
+            }
+
+            AuthorEntity entity = new AuthorEntity()
+            {
+                nombre = authorDTO.nombre,
+                ciudad = authorDTO.ciudad,
+                correo = authorDTO.correo,
+                fechaNacimiento = authorDTO.fechaNacimiento
+            };
+
+            return entity; 
+        }
+
         public BookEntity bookDtoToEntity(BookDTO bookDTO)
         {
 
@@ -24,4 +42,6 @@ namespace BibliotecaPublica.API.Helper
             return bookEntity;
         }
     }
+
+
 }

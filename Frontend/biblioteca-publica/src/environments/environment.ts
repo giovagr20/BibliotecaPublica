@@ -2,7 +2,10 @@
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+let localBack = "http://localhost:7024/"; 
+
 export const environment = {
+  localBack,
   production: false
 };
 

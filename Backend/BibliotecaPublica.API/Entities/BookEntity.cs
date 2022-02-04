@@ -11,5 +11,7 @@
         public DateTime anio { get; set; }
         public string genero { get; set; }
         public int numeroPaginas { get; set; }
+
+        public AuthorEntity author { get; set; }
     }
 }

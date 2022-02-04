@@ -6,5 +6,6 @@ namespace BibliotecaPublica.API.Helper
     public interface IDtoToEntity
     {
         BookEntity bookDtoToEntity(BookDTO bookDTO);
+        AuthorEntity authorDtoToEntity(AuthorDTO authorDTO);
     }
 }

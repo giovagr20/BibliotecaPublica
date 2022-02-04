@@ -16,19 +16,22 @@ namespace BibliotecaPublica.API.Controllers
             _bookService = bookService;
         }
 
-        [HttpPost("{book}")] 
-        public async Task<BookDTO> postNewBook([FromBody] BookDTO bookDto)
+        [HttpPost] 
+        public async Task<IActionResult> postNewBook([FromBody] BookDTO bookDto)
         {
             if (bookDto == null)
             {
-               return new BookDTO();
+                return BadRequest();
             }
 
-            BookDTO response = _bookService.createBookAsync(bookDto);
-
-            return response;
+            return Ok(await _bookService.createBookAsync(bookDto));
 
         }
 
+        [HttpGet]
+        public async Task<IActionResult> getBook([FromRoute] int id) {
+            
+            return Ok(await _bookService.GetBookAsync(id)); 
+        }
     }
 }

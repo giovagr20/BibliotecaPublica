@@ -4,6 +4,10 @@ namespace BibliotecaPublica.API.Services
 {
     public interface IBookService
     {
-        BookDTO createBookAsync(BookDTO book);
+        Task<int> createBookAsync(BookDTO book);
+
+        Task<BookDTO> GetBookAsync(int id);
+
+        IEnumerable<BookDTO> GetBooksAsync();
     }
 }

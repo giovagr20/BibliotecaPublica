@@ -1,1 +1,55 @@
-<strong>book works!</strong>
+<nav class="navbar navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img
+        src="/docs/5.1/assets/brand/bootstrap-logo.svg"
+        alt=""
+        width="30"
+        height="24"
+        class="d-inline-block align-text-top"
+      />
+      Bootstrap
+    </a>
+  </div>
+</nav>
+
+<div class="input-group mb-3">
+
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <button type="button" class="btn btn-sm btn-primary mb-3" (click)="createBookModal()">
+        Agregar libro
+      </button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm">
+      <table class="table table-hover">
+        <caption>
+          Tabla de libros
+        </caption>
+        <thead>
+          <tr>
+            <th scope="col">Titulo</th>
+            <th scope="col">Año</th>
+            <th scope="col">Genero</th>
+            <th scope="col">Numero Paginas</th>
+          </tr>
+        </thead>
+        <tbody>
+          <ng-container *ngFor="let book of books; index as i">
+            <tr>
+              <td scope="col">{{ book?.titulo }}</td>
+              <td scope="col">{{ book?.anio }}</td>
+              <td scope="col">{{ book?.genero }}</td>
+              <td scope="col">{{ book?.numeroPaginas }}</td>
+            </tr>
+          </ng-container>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
