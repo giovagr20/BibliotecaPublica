@@ -4,22 +4,20 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BookComponent } from './components/book/book.component';
-import { AuthorComponent } from './components/author/author.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule } from '@angular/forms';
+import { AuthorComponent } from './components/author/author.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    BookComponent,
-    AuthorComponent
-  ],
+  declarations: [AppComponent, BookComponent, AuthorComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    NgbModule
+    NgbModule,
+    FormsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

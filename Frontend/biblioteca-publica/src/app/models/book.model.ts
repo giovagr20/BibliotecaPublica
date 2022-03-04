@@ -1,6 +1,6 @@
+import { BooksList } from './books-list-model';
+
 export interface Books {
-    titulo: string,
-    anio: Date
-    genero: string,
-    numeroPaginas: number
-} 
+  total: number;
+  books: Array<BooksList>;
+}

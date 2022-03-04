@@ -1,4 +1,4 @@
-<nav class="navbar navbar-light bg-light">
+<nav class="navbar navbar-dark bg-primary">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">
       <img
@@ -8,23 +8,46 @@
         height="24"
         class="d-inline-block align-text-top"
       />
-      Bootstrap
+      BOOKS
     </a>
   </div>
 </nav>
 
-<div class="input-group mb-3">
-
-</div>
+<div class="input-group mb-3"></div>
 
 <div class="container">
   <div class="row">
     <div class="col-sm-4">
-      <button type="button" class="btn btn-sm btn-primary mb-3" (click)="createBookModal()">
+      <button
+        type="button"
+        class="btn btn-sm btn-primary mb-3"
+        (click)="createBookModal()"
+      >
         Agregar libro
       </button>
     </div>
   </div>
+
+  <hr />
+
+  <div class="row">
+    <div class="col-sm-4">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Libro a buscar"
+        [(ngModel)]="nameBook"
+      />
+      <button
+        type="button"
+        class="form-control btn btn-sm btn-warning mb-3"
+        (click)="getBookById(nameBook)"
+      >
+        Buscar libro
+      </button>
+    </div>
+  </div>
+
   <div class="row">
     <div class="col-sm">
       <table class="table table-hover">
@@ -34,18 +57,25 @@
         <thead>
           <tr>
             <th scope="col">Titulo</th>
-            <th scope="col">Año</th>
-            <th scope="col">Genero</th>
-            <th scope="col">Numero Paginas</th>
+            <th scope="col">Subtitulo</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Imagen</th>
+            <th scope="col"></th>
           </tr>
         </thead>
         <tbody>
-          <ng-container *ngFor="let book of books; index as i">
+          <ng-container *ngFor="let book of bookEntry?.books; index as i">
             <tr>
-              <td scope="col">{{ book?.titulo }}</td>
-              <td scope="col">{{ book?.anio }}</td>
-              <td scope="col">{{ book?.genero }}</td>
-              <td scope="col">{{ book?.numeroPaginas }}</td>
+              <td scope="col">{{ book?.title }}</td>
+              <td scope="col">{{ book?.subtitle }}</td>
+              <td scope="col">
+                <code>{{ book?.price }}</code>
+              </td>
+              <td scope="col">
+                <a href="{{ book?.url }}" target="_blank"
+                  ><img src="{{ book?.image }}" alt="Image" />
+                </a>
+              </td>
             </tr>
           </ng-container>
         </tbody>
